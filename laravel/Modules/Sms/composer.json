@@ -1,0 +1,29 @@
+{
+    "name": "ganguo/sms",
+    "description": "",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Sms\\Providers\\SmsServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "require": {
+        "overtrue/easy-sms": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Sms\\": ""
+        }
+    }
+}

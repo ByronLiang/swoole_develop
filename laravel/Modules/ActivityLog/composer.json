@@ -1,0 +1,29 @@
+{
+    "name": "ganguo/activitylog",
+    "description": "活动记录",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\ActivityLog\\Providers\\ActivityLogServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\ActivityLog\\": ""
+        },
+        "files": [
+            "helpers.php"
+        ]
+    }
+}

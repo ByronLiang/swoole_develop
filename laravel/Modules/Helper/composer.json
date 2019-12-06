@@ -1,0 +1,25 @@
+{
+    "name": "ganguo/helper",
+    "authors": [
+        {
+            "name": "Stevie",
+            "email": "stevie@ganguo.hk"
+        }
+    ],
+    "version": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Modules\\Helper\\": ""
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Helper\\JSend\\JSendServiceProvider",
+                "Modules\\Helper\\Providers\\EventServiceProvider"
+            ],
+            "aliases": []
+        }
+    }
+}

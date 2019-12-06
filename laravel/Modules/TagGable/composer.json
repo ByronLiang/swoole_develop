@@ -1,0 +1,28 @@
+{
+    "name": "ganguo/tag-gable",
+    "description": "标签管理库",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TagGable\\": ""
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\TagGable\\Providers\\TagGableServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}

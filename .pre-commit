@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# vim:syntax=sh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+PHP_CS_FIXER=`which php-cs-fixer`
+CONFIG="--config=.php_cs  --dry-run --diff --stop-on-violation --using-cache=no --path-mode=intersection"
+
+if [ "$PHP_CS_FIXER" == '' ]; then
+    echo -e "${RED}Please install php-cs-fixer, e.g.: brew install php-cs-fixer${NC}"
+    exit 1
+fi
+
+echo -e "${GREEN}Run php-cs-fixer pre-commit hook${NC}"
+
+git status --porcelain | grep -e '^\s*[AM]\(.*\).php$' | cut -c 3- | while read line; do
+    $PHP_CS_FIXER fix $CONFIG -- "$line"
+    if [ $? != 0 ]; then
+        exit 1
+        break
+    fi
+done
+
+if [ $? != 0 ]; then
+    echo -e "${RED}Fix php-cs-fixer error before commit${NC}"
+    exit 2
+else
+    echo -e "${GREEN}php-cs-fixer pre-commit hook finish${NC}"
+    exit 0
+fi

@@ -1,0 +1,28 @@
+{
+    "name": "byron/wechat",
+    "authors": [
+        {
+            "name": "liangzhaocong",
+            "email": "liangzhaocong@163.com"
+        }
+    ],
+    "require": {
+        "overtrue/wechat": "^4.0"
+    },
+    "version": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Wechat\\Providers\\WechatProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Wechat\\": ""
+        }
+    }
+}

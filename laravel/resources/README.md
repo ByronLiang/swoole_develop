@@ -1,0 +1,10 @@
+- assets 前端需要编译的代码
+    - admin 后台业务代码
+    - js 用户端的 pc/移动 交互代码
+    - css 用户端的 pc/移动 布局样式代码
+- lang 语言文件
+- views [babel 视图](https://laravel.com/docs/5.5/views)
+    - errors 对应http状态码的错误页面
+    - web 前台请后端不分离版本页面
+    - welcome.blade 默认欢迎页面，当只有接口时需要
+    - admin.blade 后台前后端分离起始页面

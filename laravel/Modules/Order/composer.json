@@ -1,0 +1,26 @@
+{
+    "name": "ganguo/order",
+    "description": "",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Order\\Providers\\OrderServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Order\\": ""
+        }
+    }
+}

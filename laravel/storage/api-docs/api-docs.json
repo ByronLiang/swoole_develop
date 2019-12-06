@@ -1,0 +1,245 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Dreamer OpenApi",
+        "description": "in the URL for parameter ?api_token=XXX.<br/>in the header for 'Authorization: Bearer XXX'. Which is used in JWT, Oauth, etc.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "tags": [
+                    "认证"
+                ],
+                "summary": "注册",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\AuthController::postRegister",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthRegisterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "认证"
+                ],
+                "summary": "登陆",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\AuthController::postLogin",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthLoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/jwt_login": {
+            "post": {
+                "tags": [
+                    "认证"
+                ],
+                "summary": "JWT登陆",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\AuthController::postJwtLogin",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthLoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/chats": {
+            "get": {
+                "tags": [
+                    "聊天室"
+                ],
+                "summary": "聊天信息",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\ChatController::index",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "作者ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/my/profile": {
+            "get": {
+                "tags": [
+                    "个人中心"
+                ],
+                "summary": "个人信息",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\ProfilesController::getProfile",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/supplier/captcha": {
+            "post": {
+                "tags": [
+                    "第三方供应"
+                ],
+                "summary": "获取验证码",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\API\\SupplierController::postCaptcha",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SupplierCaptchaRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AuthLoginRequest": {
+                "required": [
+                    "account",
+                    "password"
+                ],
+                "properties": {
+                    "account": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AuthRegisterRequest": {
+                "required": [
+                    "nickname",
+                    "account",
+                    "captcha",
+                    "password"
+                ],
+                "properties": {
+                    "nickname": {
+                        "description": "昵称",
+                        "type": "string"
+                    },
+                    "account": {
+                        "description": "手机号",
+                        "type": "string"
+                    },
+                    "captcha": {
+                        "description": "验证码",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "密码",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "SupplierCaptchaRequest": {
+                "required": [
+                    "account"
+                ],
+                "properties": {
+                    "account": {
+                        "description": "用户手机号码",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

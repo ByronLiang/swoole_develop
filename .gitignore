@@ -1,0 +1,5 @@
+.DS_Store
+.idea
+npm-debug.log
+*_bak
+*.zip

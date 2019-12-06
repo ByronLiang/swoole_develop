@@ -1,0 +1,30 @@
+{
+    "name": "ganguo/socialite",
+    "description": "第三方登录库",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "require": {
+        "overtrue/socialite": "^2.0",
+        "overtrue/wechat": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Socialite\\": ""
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Socialite\\Providers\\SocialiteServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}

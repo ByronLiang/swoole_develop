@@ -1,0 +1,28 @@
+{
+  "name": "ganguo/client-aggregation-upload",
+  "description": "客户端聚合上传",
+  "version": "dev",
+  "authors": [
+    {
+      "name": "ganguo",
+      "email": "g@ganguo.io"
+    }
+  ],
+  "require": {
+    "qiniu/php-sdk": "^7.2.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\ClientAggregationUpload\\Providers\\ClientAggregationUploadServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\ClientAggregationUpload\\": ""
+    }
+  }
+}

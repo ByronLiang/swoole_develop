@@ -1,0 +1,30 @@
+{
+  "name": "ganguo/aggregation-pay",
+  "description": "聚合支付&退款",
+  "keywords": ["pay", "laravel", "sdk"],
+  "license": "MIT",
+  "version": "dev",
+  "authors": [
+    {
+      "name": "stevie",
+      "email": "stevie@ganguo.hk"
+    }
+  ],
+  "require": {
+    "league/omnipay": "^3.0",
+    "lokielse/omnipay-alipay": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\AggregationPay\\": ""
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\AggregationPay\\Providers\\AggregationPayServiceProvider"
+      ],
+      "aliases": []
+    }
+  }
+}

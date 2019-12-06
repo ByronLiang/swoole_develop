@@ -1,0 +1,28 @@
+{
+  "name": "ganguo/meta-able",
+  "description": "扩展附属库",
+  "keywords": [],
+  "version": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "stevie",
+      "email": "stevie@ganguo.hk"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\MetaAble\\": ""
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\MetaAble\\Providers\\MetaAbleServiceProvider"
+      ],
+      "aliases": []
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "ganguo/setting",
+    "description": "全部设置管理库",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "ganguo",
+            "email": "g@ganguo.io"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Setting\\": "."
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Setting\\Providers\\MainServiceProvider"
+            ],
+            "aliases": {
+                "Setting": "Modules\\Setting\\Facades\\SettingFacade"
+            }
+        }
+    }
+}
